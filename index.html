@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang='sk'>
+
+<head>
+    <meta charset="utf-8">
+    <!-- HTML Meta Tags -->
+    <title>Shisha Town</title>
+    <meta name="description" content="Shisha Town - cafe & lounge bar Mickiewiczova - najlepšia shisha v Bratislave!">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Shisha Town">
+    <meta itemprop="description" content="Shisha Town - cafe & lounge bar Mickiewiczova - najlepšia shisha v Bratislave!">
+    <meta itemprop="image" content="https://turing.gjh.sk/~wittlinger.s/shisha_town/images/logo2.png">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://www.shishatown.sk">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shisha Town">
+    <meta property="og:description" content="Shisha Town - cafe & lounge bar Mickiewiczova - najlepšia shisha v Bratislave!">
+    <meta property="og:image" content="https://turing.gjh.sk/~wittlinger.s/shisha_town/images/logo2.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shisha Town">
+    <meta name="twitter:description" content="Shisha Town - cafe & lounge bar Mickiewiczova - najlepšia shisha v Bratislave!">
+    <meta name="twitter:image" content="https://turing.gjh.sk/~wittlinger.s/shisha_town/images/logo2.png">
+
+    <!-- Meta Tags Generated via http://heymeta.com -->
+    <!-- Bootstrap core CSS -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--
+	<script src="libs/ol/ol.js"></script>
+	<link rel="stylesheet" href="libs/ol/ol.css">
+	-->
+</head>
+
+<body>
+   <canvas id="canvas" style="position: fixed; width: 100vw;height: 100vh;
+   "></canvas>
+    <nav id="navbar">
+        <input type="checkbox" id="check" onchange='handleChange(this);'>
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul class="menu">
+            <img src=images/logo2.png alt='Shisha Town Logo' class='logo'>
+            <a class="menuclick" href='..-#about_us_nav'>
+                <li class="menuitem about_us_click">O nás</li>
+            </a>
+            <a class="menuclick" href='cennik.html'>
+                <li class="menuitem menu_click">Cenník</li>
+            </a>
+            <a class="menuclick" href='#gallery_nav'>
+                <li class="menuitem gallery_click">Galéria</li>
+            </a>
+            <a class="menuclick" href='#contact_nav'>
+                <li class="menuitem contact_click">Kontakt</li>
+            </a>
+        </ul>
+    </nav>
+    <div class='header'>
+        <div class='header_curved_text animated wow fadeIn'><img src='images/heading.webp' alt='Shisha Town nadpis'>
+        </div>
+    </div>
+    <div class='main_content'>
+        <h1>Shisha Town Bratislava</h1>
+        <div class='about_us'>
+            <div id='about_us_nav' class='nav_offset'></div>
+            <img class='about_us_img animated wow fadeInLeft' src='images/about_us_hok.webp' alt='Shisha Town o nás vodná fajka'>
+            <div class='about_us_content animated wow fadeInUp'>
+                <h3 class='about_us_nadpis'>O nás</h3>
+                <p class="about_us_info">Sme mladí a perspektívni ľudia, ktorí fajčenie shishi majú ako svoje hobby. Používame len tie najkvalitnejšie druhy tabakov. Prídťe si ku nám vychutnať fajnovú shishu z vybraných druhov tabakov. Ak by Vám náhodou nesedela niektorá z ponúkaných príchutí, radi Vám ju podľa vašej chuti pripravíme.</p>
+            </div>
+        </div>
+        <div class='rest_menu animated wow fadeIn'>
+            <h3 class='menu_h'>Naša Ponuka</h3>
+            <div id='menu_nav' class='nav_offset'></div>
+            <!--googleoff: index-->
+            <ul class="collapsible popout" data-collapsible="accordion">
+                <li class="menupart">
+                    <div class="collapsible-header  "><img src='images/menu/shisha.png' alt='vodná fajka ikona'><span>vodná fajka</span><img class='menu_arrow' src='images/menu/arrow.png' alt='menu šípka'></div>
+                    <div class="collapsible-body">
+                        <table class="">
+                            <tbody>
+                                <tr>
+                                    <td>prenájom vodnej fajky</td>
+                                    <td>9,00€</td>
+                                </tr>
+                                <tr>
+                                    <td>prenájom vodnej fajky - exclusive</td>
+                                    <td>13,90€</td>
+                                </tr>
+                                <tr>
+                                    <th>príchute do vodnej fajky</th>
+                                </tr>
+                                <tr>
+                                    <td class='flavors'>1. Mango tango,
+                                        2. Peach and mint,
+                                        3. Orange and mint,
+                                        4. Two apples,
+                                        5. Ice lime on the rocks,
+                                        6. Mint,
+                                        7. Double melon,
+                                        8. Ice bonbon,
+                                        9. Cactus,
+                                        10. Cherry and mint,
+                                        11. Green lemon and mint,
+                                        12. Blueberry and mint</td>
+                                    <td class='flavors'>13. Cola dragon,
+                                        14. Blue ice,
+                                        15. Grape and mint,
+                                        16. Ice apple,
+                                        17. Chewing gum mint and cinnamon,
+                                        18. Love 66,
+                                        19. Lemon pie,
+                                        20. Maracuja,
+                                        21. Mango tango ice,
+                                        22. Grape lemon mint,
+                                        23. Ice,
+                                        24. Water melon,
+                                        25. Blue moon</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="menupart">
+                    <div class="collapsible-header  "><img src='images/menu/coffee.png' alt='káva ikona'><span>káva</span><img class='menu_arrow' src='images/menu/arrow.png' alt='menu šípka'></div>
+                    <div class="collapsible-body">
+                        <table class="">
+                            <tbody>
+                                <tr>
+                                    <td>1x Espresso 7g</td>
+                                    <td>1,20€</td>
+                                </tr>
+                                <tr>
+                                    <td>2x Espresso 7g</td>
+                                    <td>1,60€</td>
+                                </tr>
+                                <tr>
+                                    <td>3x Espresso 7g</td>
+                                    <td>2,00€</td>
+                                </tr>
+                                <tr>
+                                    <td>4x Espresso 7g</td>
+                                    <td>2,40€</td>
+                                </tr>
+                                <tr>
+                                    <td>Espresso veľké 7g</td>
+                                    <td>1,20€</td>
+                                </tr>
+                                <tr>
+                                    <td>Espresso dvojité 14g</td>
+                                    <td>1,50€</td>
+                                </tr>
+                                <tr>
+                                    <td>Cappuccino 7g</td>
+                                    <td>1,40€</td>
+                                </tr>
+                                <tr>
+                                    <td>Cappuccino karamelové 7g</td>
+                                    <td>1,70€</td>
+                                </tr>
+                                <tr>
+                                    <td>Cappuccino čokoládové 7g</td>
+                                    <td>1,70€</td>
+                                </tr>
+                                <tr>
+                                    <td>Cappuccino lieskovo-orieškové 7g</td>
+                                    <td>1,70€</td>
+                                </tr>
+                                <tr>
+                                    <td>Latte Macchiato 7g</td>
+                                    <td>1,60€</td>
+                                </tr>
+                                <tr>
+                                    <td>Latte Macchiato karamelové 7g</td>
+                                    <td>1,90€</td>
+                                </tr>
+                                <tr>
+                                    <td>Latte Macchiato čokoládové 7g</td>
+                                    <td>1,90€</td>
+                                </tr>
+                                <tr>
+                                    <td>Latte Macchiato lieskovo-orieškové 7g</td>
+                                    <td>1,90€</td>
+                                </tr>
+                                <tr>
+                                    <td>Topping 1cl</td>
+                                    <td>0,30€</td>
+                                </tr>
+                                <tr>
+                                    <td>Mlieko Maresi 2cl</td>
+                                    <td>0,20€</td>
+                                </tr>
+                                <tr>
+                                    <td>Šľahačka pravá 25g</td>
+                                    <td>0,30€</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="menupart">
+                    <div class="collapsible-header  "><img src='images/menu/tea.png' alt='čaj ikona'><span>čaj</span><img class='menu_arrow' src='images/menu/arrow.png' alt='menu šípka'></div>
+                    <div class="collapsible-body">
+                        <table class="">
+                            <tbody>
+                                <tr class="">
+                                    <th>čierny</th>
+                                    <th>0,5l</th>
+                                    <th>1l</th>
+                                </tr>
+                                <tr>
+                                    <td>Touareg Black 5g/10g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>povzbudivý</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Russia 5g/10g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>povzbudivý</i></td>
+                                </tr>
+                                <tr class="">
+                                    <th>zelený</th>
+                                    <th>0,5l</th>
+                                    <th>1l</th>
+                                </tr>
+                                <tr>
+                                    <td>Touareg 7g/14g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>povzbudivý</i></td>
+                                </tr>
+                                <tr>
+                                    <td>China Jasmin 5g/10g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>antioxidanty</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Diamantový čaj 5g/10g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>očista, vitalita, imunita</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Maté Green 5g/10g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>povzbudivý</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Maté IQ 5g/10g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>povzbudenie mysle, s guaranou a ginkom</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Jahoda v šampanskom 5g/10g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>zelený čaj s jahodami a púčikmi ruží</i></td>
+                                </tr>
+                                <tr class="">
+                                    <th>biely</th>
+                                    <th>0,5l</th>
+                                    <th>1l</th>
+                                </tr>
+                                <tr>
+                                    <td>Pai Mu Tan 5g/10g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>regeneračný</i></td>
+                                </tr>
+                                <tr class="">
+                                    <th>bylinný</th>
+                                    <th>0,5l</th>
+                                    <th>1l</th>
+                                </tr>
+                                <tr>
+                                    <td>Karkáde Ibištek 8g/16g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>osviežujúci, odstraňujúci únavu, zlepšenie nálady</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Herkules 8g/16g</td>
+                                    <td>1,90€</td>
+                                    <td>2,90€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>Ajurvédsky korenistý čaj so ženšenom, na bolesti hlavy</i></td>
+                                </tr>
+                                <tr class="">
+                                    <th>rooibos</th>
+                                    <th>0,5l</th>
+                                    <th>1l</th>
+                                </tr>
+                                <tr>
+                                    <td>Čaj Faraónov 8g/16g</td>
+                                    <td>1,90€</td>
+                                    <td>2,90€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>Africký, korenistý, na sviežu myseľ a mladosť</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Tantra 8g/16g</td>
+                                    <td>1,90€</td>
+                                    <td>2,90€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>Ajurvédsky korenistý čaj so ženšenom, na bolesti hlavy</i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="menupart">
+                    <div class="collapsible-header  "><img src='images/menu/icetea.png' alt='ľadový čaj ikona'><span>ľadový čaj</span><img class='menu_arrow' src='images/menu/arrow.png' alt='menu šípka'></div>
+                    <div class="collapsible-body">
+                        <table class="">
+                            <tbody>
+                                <tr class="">
+                                    <th>čierny</th>
+                                    <th>0,5l</th>
+                                    <th>1l</th>
+                                </tr>
+                                <tr>
+                                    <td>Touareg Black 5g/10g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>povzbudivý</i></td>
+                                </tr>
+                                <tr class="">
+                                    <th>zelený</th>
+                                    <th>0,5l</th>
+                                    <th>1l</th>
+                                </tr>
+                                <tr>
+                                    <td>Touareg 7g/14g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>povzbudivý</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Maté Green 5g/10g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>povzbudivý</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Jahoda v šampanskom 5g/10g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>zelený čaj s jahodami a púčikmi ruží</i></td>
+                                </tr>
+                                <tr class="">
+                                    <th>bylinný</th>
+                                    <th>0,5l</th>
+                                    <th>1l</th>
+                                </tr>
+                                <tr>
+                                    <td>Karkáde Ibištek 8g/16g</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>osviežujúci, odstraňujúci únavu, zlepšenie nálady</i></td>
+                                </tr>
+                                <tr>
+                                    <th>ČAJ S MLIEKOM</th>
+                                </tr>
+                                <tr class="">
+                                    <th>rooibos</th>
+                                    <th>0,5l</th>
+                                    <th>1l</th>
+                                </tr>
+                                <tr>
+                                    <td>Malý Yetti 8g/16g</td>
+                                    <td>2,40€</td>
+                                    <td>3,90€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>Africký, s kúskami kakaa a kardamonom, na ozdravné kúry</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Čaj Kráľa Opíc 8g/16g</td>
+                                    <td>2,40€</td>
+                                    <td>3,90€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>Pikantný aktivizujúci čaj posilňujúci zdravie a energiu</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Tantra s mliekom 8g/16g</td>
+                                    <td>2,40€</td>
+                                    <td>3,90€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>Ajurvédsky korenistý čaj so ženšenom, na bolesti hlavy</i></td>
+                                </tr>
+                                <tr>
+                                    <th>AFRODIZIAKÁLNY ČAJ</th>
+                                </tr>
+                                <tr class="">
+                                    <th>zelený</th>
+                                    <th>0,5l</th>
+                                    <th>1l</th>
+                                </tr>
+                                <tr>
+                                    <td>Kamasutra 5g/10g</td>
+                                    <td>1,90€</td>
+                                    <td>2,90€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>Vzpružujúci čaj, pre vitalitu, energiu a silu</i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="menupart">
+                    <div class="collapsible-header  "><img src='images/menu/lemonade.png' alt='čerstvé limonády ikona'><span>čerstvé limonády</span><img class='menu_arrow' src='images/menu/arrow.png' alt='menu šípka'></div>
+                    <div class="collapsible-body">
+                        <table class="">
+                            <tbody>
+                                <tr class="">
+                                    <th></th>
+                                    <th>0,5l</th>
+                                    <th>1l</th>
+                                </tr>
+                                <tr>
+                                    <td>Kiwi</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td>Zázvor</td>
+                                    <td>1,70€</td>
+                                    <td>2,50€</td>
+                                </tr>
+                                <tr>
+                                    <td>Grepfruit</td>
+                                    <td>1,90€</td>
+                                    <td>2,90€</td>
+                                </tr>
+                                <tr>
+                                    <td>Granátové jablko a pomaranč</td>
+                                    <td>1,90€</td>
+                                    <td>2,90€</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="menupart">
+                    <div class="collapsible-header  "><img src='images/menu/nonalc.png' alt='nealko ikona'><span>nealko</span><img class='menu_arrow' src='images/menu/arrow.png' alt='menu šípka'></div>
+                    <div class="collapsible-body">
+                        <table class="">
+                            <tbody>
+                                <tr class="">
+                                    <th></th>
+                                    <th>0,3l</th>
+                                    <th>0,5l</th>
+                                </tr>
+                                <tr>
+                                    <td>Kofola čapovaná</td>
+                                    <td>0,90€</td>
+                                    <td>1,30€</td>
+                                </tr>
+                                <tr>
+                                    <td>Hroznovka čapovaná</td>
+                                    <td>0,80€</td>
+                                    <td>1,10€</td>
+                                </tr>
+                                <tr class="">
+                                    <th></th>
+                                    <th>0,2l</th>
+                                    <th>0,3l</th>
+                                </tr>
+                                <tr>
+                                    <td>Džús</td>
+                                    <td>1,50€</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Tonic 0,25l</td>
+                                    <td>1,50€</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Minerálna voda</td>
+                                    <td></td>
+                                    <td>1,20€</td>
+                                </tr>
+                                <tr>
+                                    <td><i>perlivá, jemne perlivá, neperlivá</i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="menupart">
+                    <div class="collapsible-header  "><img src='images/menu/others.png' alt='iné ikona'><span>iné</span><img class='menu_arrow' src='images/menu/arrow.png' alt='menu šípka'></div>
+                    <div class="collapsible-body">
+                        <table class="">
+                            <tbody>
+                                <tr>
+                                    <th></th>
+                                    <th>0,5l</th>
+                                    <th>1l</th>
+                                </tr>
+                                <tr>
+                                    <td>Sóda</td>
+                                    <td>0,50€</td>
+                                    <td>1,00€</td>
+                                </tr>
+                                <tr>
+                                    <td>Med 12g</td>
+                                    <td>0,20€</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--googleon: index-->
+        <div class='recenzie animated wow fadeInDown'>
+            <h3 class='centered_h'>Napísali o nás</h3>
+            <div class='recenzie_content'>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100 review_item one" src="images/reviews/1.webp" alt="Shisha Town prvá recenzia">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 review_item two" src="images/reviews/2.webp" alt="Shisha Town druhá recenzia">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 review_item three" src="images/reviews/3.webp" alt="Shisha Town tretia recenzia">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class='our_team animated wow fadeInRight'>
+
+            <h3 class='centered_h'>Náš Tím</h3>
+            <div class='our_team_content'>
+                <div class='team_member'>
+                    <img class='team_member_img' src="https://via.placeholder.com/200" alt="">
+                    <p>Zamestnanec 1</p>
+                    <p>Barman</p>
+                </div>
+                <div class='team_member'>
+                    <img class='team_member_img' src="https://via.placeholder.com/200" alt="">
+                    <p>Zamestnanec 2</p>
+                    <p>Manažér</p>
+                </div>
+                <div class='team_member'>
+                    <img class='team_member_img' src="https://via.placeholder.com/200" alt="">
+                    <p>Zamestnanec 3</p>
+                    <p>Barman</p>
+                </div>
+            </div>
+        </div>
+        <div class='gallery animated wow fadeInUp'>
+            <div id='gallery_nav' class='nav_offset'></div>
+            <h3 class='centered_h'>Galéria</h3>
+            <div class='desktop_gallery'>
+                <div class="img_box">
+                    <a href="https://via.placeholder.com/200x250" data-lightbox="Interier" data-title="Interier">
+                        <img src="https://via.placeholder.com/200x250" alt="">
+                    </a>
+                </div>
+                <div class="img_box">
+                    <a href="https://via.placeholder.com/200x250" data-lightbox="Interier" data-title="Interier">
+                        <img src="https://via.placeholder.com/200x250" alt="">
+                    </a>
+                </div>
+                <div class="img_box">
+                    <a href="https://via.placeholder.com/200x250" data-lightbox="Interier" data-title="Interier">
+                        <img src="https://via.placeholder.com/200x250" alt="">
+                    </a>
+                </div>
+                <div class="img_box">
+                    <a href="https://via.placeholder.com/200x250" data-lightbox="Interier" data-title="Interier">
+                        <img src="https://via.placeholder.com/200x250" alt="">
+                    </a>
+                </div>
+                <div class="img_box">
+                    <a href="https://via.placeholder.com/200x250" data-lightbox="Interier" data-title="Interier">
+                        <img src="https://via.placeholder.com/200x250" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class='mobile_gallery'>
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="https://via.placeholder.com/200x250" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="https://via.placeholder.com/200x250" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="https://via.placeholder.com/200x250" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class='kontakt animated wow fadeInDown'>
+            <div id='contact_nav' class='nav_offset'></div>
+            <div class='kontakt_box'>
+                <h3 class='centered_h'>Kontaktuje nás</h3>
+                <p><a href="mailto:info@shishatown.sk">info@shishatown.sk</a></p>
+                <p><a href="tel:+421948455534">0948 455 534</a></p>
+                <p><a href="https://www.shishatown.sk">www.shishatown.sk</a></p>
+            </div>
+            <div class='kontakt_box'>
+                <h3 class='centered_h'>Otváracie hodiny</h3>
+                <p>Po-Pi : 11:00 - 22:00</p>
+                <p>So-Ne : 14:00 - 22:00</p>
+                <p></p>
+            </div>
+            <div class='kontakt_box'>
+                <h3 class='centered_h'>Adresa</h3>
+                <p>Shisha Town</p>
+                <p>Mickiewiczova 5</p>
+                <p>811 07 Bratislava</p>
+            </div>
+        </div>
+        <div class='map animated wow fadeIn'>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.9519859596826!2d17.112723115577648!3d48.149730879224435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c894582a5e4bb%3A0xf4407ea93d4347f4!2sShisha%20Town!5e0!3m2!1ssk!2ssk!4v1592568481350!5m2!1ssk!2ssk" width="600" height="450" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <div class='socials animated wow fadeIn'>
+            <a target="_blank" href='https://www.facebook.com/shishatownbratislava'><img class='fb_icon' src='images/socials/fb.png' alt="Shisha Town Facebook ikona"></a>
+            <a target="_blank" href='https://www.instagram.com/townshisha'><img class='ig_icon' src='images/socials/ig.png' alt="Shisha Town Instagram ikona"></a>
+            <a target="_blank" href='https://www.youtube.com/watch?v=15mdR0DRi84'><img class='ytb_icon' src='images/socials/ytb.png' alt="Shisha Town Youtube ikona"></a>
+        </div>
+        <div class='trademark animated wow fadeIn'>
+            <p>Shisha Town © 2020. Všetky práva vyhradené</p>
+        </div>
+    </div>
+    <link href="css/lightbox.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
+    <script src="js/smooth_scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="js/hover.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="https://kit.fontawesome.com/172b571a75.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="mdb/js/bootstrap.min.js"></script>
+    <script src="js/smoke.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="mdb/css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="mdb/css/mdb.min.css">
+</body>

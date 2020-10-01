@@ -1,0 +1,239 @@
+@import './menu.scss';
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+$primary : #603813;
+$secondary: rgb(103,73,41);
+$tertiary: rgb(162,142,116);
+$bonus: rgb(141,106,72);
+$short : all .4s;
+
+@mixin tablet {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin phone{
+    @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 200vh;
+    margin: 0;
+    background: black;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+.main-cont {
+    padding-top: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .cont {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        @include phone{
+            width: 94%;
+        }
+    }
+
+    .main-h {
+        text-align: center;
+        font-size: 40px;
+        color: white;
+
+        &::after {
+            content: '';
+            background: $primary;
+            width: 80%;
+            margin: auto;
+            display: block;
+            height: 2px;
+        }
+    }
+
+}
+
+.chooser-cont {
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include phone{
+        margin: 20px 0;
+    }
+
+    .chooser-box {
+        display: flex;
+        transition: $short;
+        cursor: pointer;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: black;
+        border: $primary solid 4px;
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        margin: 50px;
+        @include phone(){
+            width: 40%;
+            margin: 5px;
+        }
+
+        img {
+            filter: invert(100%);
+            width: 90px;
+            height: 90px;
+            @include tablet(){
+            width: 50%;
+            height: auto;
+        }
+        }
+
+        div {
+            font-size: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        @include desktop{
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+}
+
+.sub-h {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    width: fit-content;
+    padding-bottom: 20px;
+
+    &::after {
+        content: '';
+        background: $primary;
+        width: 80%;
+        margin: auto;
+        display: block;
+        height: 2px;
+    }
+}
+
+.am-h {
+    margin-top: 20px;
+    font-size: 22px;
+    text-transform: uppercase;
+    position: relative;
+    
+    .main{
+        max-width: 40%;
+    }
+
+    .am1 {
+        position: absolute;
+        right: 30%;
+        bottom: 0;
+    }
+
+    .am2 {
+        position: absolute;
+        right: 20px;
+        bottom: 0;
+    }
+}
+
+.type-h{
+    font-size: 16px;
+    background: $tertiary;
+    width: fit-content;
+    padding: 7px;
+    margin: 8px;
+    text-transform: uppercase;
+    border-radius: 15px;
+    margin-top: -10px;
+    transform: translate(0,20px);
+}
+
+.menu-cont {
+    background: $primary;
+    min-height: 300px;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 25px;
+    margin-bottom: 100px;
+    z-index: 2;
+}
+
+.item-wrapper{
+    background: $secondary;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 10px 0;
+}
+
+.menu-item{
+    margin: 5px 0;
+    position: relative;
+    font-size: 16px;
+    @include phone{
+        font-size: 14px;
+    }
+    .name{
+        max-width: 60%;
+        @include phone{
+            max-width: 40%;
+        }
+        &.only-one{
+            max-width: 80%;
+            @include phone{
+                max-width: 60%;
+            }
+        }
+        &.zero{
+            max-width: 100%;
+        }
+    }
+    .price1{
+        position: absolute;
+        top: 0;
+        right: 30%;
+    }
+    .price2{
+        position: absolute;
+        top: 0;
+        right: 20px;
+        @include phone{
+            right: 5px;
+        }
+    }
+    .bonus-info{
+         max-width: 60%;
+        color: $bonus;
+        font-size: 13px;
+    }
+}

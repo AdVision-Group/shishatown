@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang='sk'>
+
+<head>
+    <meta charset="utf-8">
+    <!-- HTML Meta Tags -->
+    <title>Shisha Town</title>
+    <meta name="description" content="Shisha Town - cafe & lounge bar Mickiewiczova - najlepšia shisha v Bratislave!">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Shisha Town">
+    <meta itemprop="description" content="Shisha Town - cafe & lounge bar Mickiewiczova - najlepšia shisha v Bratislave!">
+    <meta itemprop="image" content="https://turing.gjh.sk/~wittlinger.s/shisha_town/images/logo2.png">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://www.shishatown.sk">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shisha Town">
+    <meta property="og:description" content="Shisha Town - cafe & lounge bar Mickiewiczova - najlepšia shisha v Bratislave!">
+    <meta property="og:image" content="https://turing.gjh.sk/~wittlinger.s/shisha_town/images/logo2.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shisha Town">
+    <meta name="twitter:description" content="Shisha Town - cafe & lounge bar Mickiewiczova - najlepšia shisha v Bratislave!">
+    <meta name="twitter:image" content="https://turing.gjh.sk/~wittlinger.s/shisha_town/images/logo2.png">
+
+    <!-- Meta Tags Generated via http://heymeta.com -->
+    <!-- Bootstrap core CSS -->
+    <link href="css/cennik.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--
+	<script src="libs/ol/ol.js"></script>
+	<link rel="stylesheet" href="libs/ol/ol.css">
+	-->
+</head>
+
+<body>
+    <!--<canvas id="canvas" style="position: fixed; width: 100vw;height: 100vh;
+   "></canvas>-->
+    <nav id="navbar">
+        <input type="checkbox" id="check" onchange='handleChange(this);'>
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul class="menu">
+            <img src=images/logo2.png alt='Shisha Town Logo' class='logo'>
+            <a class="menuclick" href='index.html#about_us_nav'>
+                <li class="menuitem about_us_click">O nás</li>
+            </a>
+            <a class="menuclick" href='cennik.html'>
+                <li class="menuitem menu_click">Cenník</li>
+            </a>
+            <a class="menuclick" href='index.html#gallery_nav'>
+                <li class="menuitem gallery_click">Galéria</li>
+            </a>
+            <a class="menuclick" href='index.html#contact_nav'>
+                <li class="menuitem contact_click">Kontakt</li>
+            </a>
+        </ul>
+    </nav>
+    <div id="vue-cont">
+        <pricing></pricing>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/172b571a75.js" crossorigin="anonymous"></script>
+    <!--<script src="js/smoke.js"></script>-->
+    <script src="js/main.js"></script>
+<!--
+           <script src="https://unpkg.com/react@16.5.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16.5.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script  type="text/babel" src="js/cennik.js"></script>
+-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script src="js/cennik-vue.js"></script>
+    
+</body>
