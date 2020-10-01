@@ -69,8 +69,82 @@ Vue.component('cold-bev',{
     template: `<div class='cont'>
                 <sub-h t='Studené nápoje'></sub-h>
                 <div class='menu-cont'>
-                    <am-h t='Káva' am1='1l' am2='2l'></am-h>
-                </div>
+                    <am-h t='Domáce limonády' am1='0,5l' am2='1l'></am-h>
+                    <item-wrapper>
+                        <menu-item name='Citronáda' price1='1,90' price2='2,90'></menu-item>
+                        <menu-item name='Baza s citrónom' price1='2,20' price2='3,30'></menu-item>
+                        <menu-item name='Čierna ríbezľa s citrónom' price1='2,20' price2='3,30'></menu-item>
+                        <menu-item name='Malina s citrónom' price1='2,20' price2='3,30'></menu-item>
+                        <menu-item name='Višňa s citrónom' price1='2,20' price2='3,30'></menu-item>
+                        <menu-item name='Grapefruit s citrónom' price1='2,20' price2='3,30'></menu-item>
+                        <menu-item name='Granátové jablko s citrónom' price1='2,20' price2='3,30'></menu-item>
+                        <menu-item name='Kiwi s citrónom' price1='2,20' price2='3,30'></menu-item>
+                        <menu-item name='Zázvor s citrónom' price1='2,20' price2='3,30'></menu-item>
+                        <menu-item name='Mojitová' price1='2,30' price2='3,50'></menu-item>
+                        <menu-item name='BIO Uhorka s limetkou' price1='2,30' price2='3,50'></menu-item>
+                    </item-wrapper>
+                    <am-h t='Ľadový čaj' am1='0,5l' am2='1l'></am-h>
+                    <type-h t='Čierny'></type-h>
+                    <item-wrapper>
+                        <div>
+                            <menu-item name='Touareg Black, 7g/14g' price1='1,90' price2='2,90' bonusinfo='pozbudivý'></menu-item>
+                        </div>
+                    </item-wrapper>
+                    <type-h t='ZELENÝ'></type-h>
+                    <item-wrapper>
+                        <div>
+                            <menu-item name='Touareg, 7g/14g' price1='1,90' price2='2,90' bonusinfo='povzbudivý'></menu-item>
+                            <menu-item name='Maté Green, 7g/14g' price1='1,90' price2='2,90' bonusinfo='povzbudivý'></menu-item>
+                            <menu-item name='Jahoda v šampanskom, 7g/14g' price1='2,10' price2='3,30' bonusinfo='zelený čaj s jahodami a púčikmi ruží'></menu-item>
+                        </div>
+                    </item-wrapper>
+                     <type-h t='BYLINNÝ'></type-h>
+                    <item-wrapper>
+                        <div>
+                            <menu-item name='Karkáde Ibištek, 9g/18g' price1='1,90' price2='2,90' bonusinfo='osviežujúci, odstraňujúci únavu, zlepšenie nálady'></menu-item>
+                        </div>
+                    </item-wrapper>
+                    <am-h t='FĽAŠKOVÉ NEALKO' am2='0,33l'></am-h>
+                    <item-wrapper>
+                        <div>
+                            <menu-item name='Coca - Cola' price1='' price2='2,10' bonusinfo=''></menu-item>
+                            <menu-item name='Coca - Cola Zero' price1='' price2='2,10' bonusinfo=''></menu-item>
+                            <menu-item name='Römerquelle sýtená' price1='' price2='1,70' bonusinfo=''></menu-item>
+                        </div>
+                    </item-wrapper>
+                    <am-h t='' am2='0,25L'></am-h>
+                    <item-wrapper>
+                        <div>
+                            <menu-item name='Cappy pomaranč 100%' price1='' price2='2,10 EUR
+' bonusinfo=''></menu-item>
+                            <menu-item name='Cappy multivitamín' price1='' price2='2,10 EUR
+' bonusinfo=''></menu-item>
+                            <menu-item name='Kinley Tonic Water' price1='' price2='2,10 EUR
+' bonusinfo=''></menu-item>
+                            <menu-item name='Kinley Bitter Rose' price1='' price2='2,10 EUR
+' bonusinfo=''></menu-item>
+                        </div>
+                    </item-wrapper>
+                    <am-h t='VÝČAPNÉ NEALKO' am1='0,3l' am2='0,5l'></am-h>
+                    <item-wrapper>
+                        <div>
+                            <menu-item name='Kofola' price1='1,10' price2='1,50' bonusinfo=''></menu-item>
+                            <menu-item name='Hroznovka' price1='1,10' price2='1,50' bonusinfo=''></menu-item>
+                        </div>
+                    </item-wrapper>
+                    <am-h am1='0,5l' am2='1l'></am-h>
+                    <item-wrapper>
+                        <div>
+                            <menu-item name='Sóda / Voda' price1='0,70' price2='1,20' bonusinfo=''></menu-item>
+                        </div>
+                    </item-wrapper>
+                    <am-h t='' am2='0,3l'></am-h>
+                    <item-wrapper>
+                        <div>
+                            <menu-item name='Studené Granko' price1='' price2='1,90' bonusinfo='klasika, ktorá osvieži '></menu-item>
+                        </div>
+                    </item-wrapper>
+                    </div>
                 </div>
               `})
 

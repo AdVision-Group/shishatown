@@ -222,7 +222,8 @@ body {
   text-transform: uppercase;
   position: relative; }
   .am-h .main {
-    max-width: 40%; }
+    max-width: 40%;
+    min-height: 30px; }
   .am-h .am1 {
     position: absolute;
     right: 30%;
