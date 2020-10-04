@@ -325,8 +325,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex: 2; }
+    justify-content: center; }
+    @media (min-width: 900px) {
+      .setup-cont .item {
+        flex: 2; } }
     @media (max-width: 900px) {
       .setup-cont .item {
         flex-direction: row-reverse;
@@ -372,9 +374,11 @@ body {
           bottom: 40px; } }
   .setup-cont .text {
     font-size: 23px;
-    flex: 1;
     color: #A97B50;
     text-align: center; }
+    @media (min-width: 900px) {
+      .setup-cont .text {
+        flex: 1; } }
     @media (max-width: 900px) {
       .setup-cont .text {
         margin: 10px; } }
@@ -387,20 +391,23 @@ body {
   @media (max-width: 900px) {
     .flavors-and-bonus-cont {
       flex-direction: column; } }
-  .flavors-and-bonus-cont .flavors-cont {
-    flex: 2; }
-    @media (max-width: 900px) {
-      .flavors-and-bonus-cont .flavors-cont {
-        align-self: flex-start;
-        padding-bottom: 20px; } }
-    .flavors-and-bonus-cont .flavors-cont .flavors {
-      font-size: 15px;
-      margin-bottom: 5px;
-      text-transform: uppercase; }
+  @media (min-width: 900px) {
+    .flavors-and-bonus-cont .flavors-cont {
+      flex: 2; } }
+  @media (max-width: 900px) {
+    .flavors-and-bonus-cont .flavors-cont {
+      align-self: flex-start;
+      padding-bottom: 20px; } }
+  .flavors-and-bonus-cont .flavors-cont .flavors {
+    font-size: 15px;
+    margin-bottom: 5px;
+    text-transform: uppercase; }
   .flavors-and-bonus-cont .bonus-cont {
-    flex: 3;
     display: flex;
     flex-wrap: wrap; }
+    @media (min-width: 900px) {
+      .flavors-and-bonus-cont .bonus-cont {
+        flex: 3; } }
     @media (max-width: 450px) {
       .flavors-and-bonus-cont .bonus-cont {
         flex-direction: column; } }
@@ -424,6 +431,12 @@ body {
         width: 45%; } }
   .bonus-item .heading {
     font-size: 17px; }
+    @media (max-width: 1150px) {
+      .bonus-item .heading {
+        font-size: 14px; } }
+    @media (max-width: 900px) {
+      .bonus-item .heading {
+        font-size: 17px; } }
   .bonus-item .price {
     position: absolute;
     font-size: 17px;
@@ -435,6 +448,12 @@ body {
   .bonus-item .small .heading {
     font-size: 17px;
     position: relative; }
+    @media (max-width: 1150px) {
+      .bonus-item .small .heading {
+        font-size: 14px; } }
+    @media (max-width: 900px) {
+      .bonus-item .small .heading {
+        font-size: 17px; } }
     .bonus-item .small .heading .price {
       position: absolute;
       font-size: 17px;
