@@ -45,7 +45,7 @@ Vue.component('type-h',{
 Vue.component('am-h',{
     props:['t','am1','am2'],
     template: `<div class='am-h'>
-                    <h3 class='main'>{{t}}</h3>
+                    <h3 v-bind:class="am1 ? 'main' : am2 ? 'main only-one' : 'main zero'">{{t}}</h3>
                     <div v-if='am1' class='am1'>{{am1}}</div>
                     <div v-if='am2' class='am2'>{{am2}}</div>
                 </div>`
@@ -56,14 +56,262 @@ Vue.component('sub-h',{
     template: `<h2 class='sub-h'>{{t}}</h2>`
 })
 
-Vue.component('shisha',{
-    template: `<div class='shisha cont'>
-                <sub-h t='Vodné fajky'></sub-h>
-                <div class='menu-cont'>
-                    
+const configAwareMixin = {
+  computed: {
+    isSmall() {
+      return window.matchMedia('min-width:450px').matches;
+    }
+  }
+}
+
+
+
+Vue.component('bonus-item',{
+    props:['imgsrc','heading','price'],
+    mixins: [configAwareMixin],
+    template: `<div class="bonus-item">
+        <img :src='"images/cennik/" + imgsrc'>
+        <div v-if="isSmall"class="heading">{{heading}}</div>
+        <div v-if="isSmall" class="price">{{price}} €</div>
+        <div v-else class="small">
+            <div class="heading">{{heading}}
+            <div class="price">{{price}} €</div></div>
+            
+        </div>
+    </div>`
+})
+
+Vue.component('shisha-item',{
+    props:['s_imgsrc','h_imgsrc','s_heading','h_heading','s_text','h_text'],
+    template:`
+        <div class="shisha-item">
+            <img class="s-img" :src='"images/cennik/" + s_imgsrc  + ".jpg"'>
+            <div class="cont-sh">
+                <div class="s-cont">
+                    <div class="heading">{{s_heading}}</div>
+                    <div class="text">{{s_text}}</div>
+                    <img class="s-img-m" :src='"images/cennik/" + s_imgsrc  + ".jpg"'>
                 </div>
-                <div>`
-              })
+                <div class="h-cont">
+                    <div class="heading">{{h_heading}}</div>
+                    <div class="text">{{h_text}}</div>
+                    <img class="h-img":src='"images/cennik/" + h_imgsrc + ".jpg"'>
+                </div>
+            </div>
+        </div>
+    `
+
+})
+
+Vue.component('shisha',{
+    template: `<div class='centered'><div class='shisha cont'>
+                <sub-h t='Vodné fajky'></sub-h>
+                <div class='menu-cont shi'>
+                    <am-h t='Vyberte si svoj setup'></am-h>
+                    <div class="setup-cont">
+                        <div class="item">
+                            <div class="h white">Shisha classic</div>
+                            <img src="images/cennik/classic1.jpg" alt="">
+                            <div class="price">11,00 €</div>
+                        </div>
+                        <div class="text">alebo</div>
+                        <div class="item">
+                            <div class="h red">Shisha bucks</div>
+                            <img src="images/cennik/shishabucks1.jpg" alt="">
+                            <div class="price">11,90 €</div>
+                        </div>
+                        <div class="text">plus</div>
+                        <div class="item">
+                            <div class="h yellow">Korunka</div>
+                            <img src="images/cennik/korunka1.jpg" alt="">
+                        </div>
+                    </div>
+                    <am-h t='Pre náročnejších'></am-h>
+                    <div class="setup-cont">
+                        <div class="item">
+                            <div class="h purple">Shisha exclusive</div>
+                            <img src="images/cennik/ex8.jpg" alt="">
+                            <div class="price">14,90 €</div>
+                        </div>
+                        <div class="text">plus</div>
+                        <div class="item">
+                            <div class="h yellow">Korunka</div>
+                            <img src="images/cennik/korunka1.jpg" alt="">
+                        </div>
+                        <div class="text">alebo</div>
+                        <div class="item">
+                            <div class="h yellow">Korunka</div>
+                            <img src="images/cennik/korunka1.jpg" alt="">
+                        </div>
+                    </div>
+                    
+                    <am-h t='Príchute do vodnej fajky'></am-h>
+                    <div class="flavors-and-bonus-cont">
+                    <div class="flavors-cont">
+                        <div class="flavors" v-for='(flavor, index) in flavors'>{{index+1}}. {{flavor}}</div>
+                    </div>
+                    <div class="bonus-cont">
+                        <bonus-item  imgsrc='ex8.jpg' heading='Ľad do vázy' price='1,00'></bonus-item>
+                        <bonus-item imgsrc='ex8.jpg' heading='Čerstvé ovocie do vázy' price='2,00'></bonus-item>
+                        <bonus-item imgsrc='ex8.jpg' heading='Farbivo do vázy' price='1,50'></bonus-item>
+                        <bonus-item imgsrc='ex8.jpg' heading='Jednorázová hadica' price='2,00'></bonus-item>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <sub-h class='mt' t='Výber vodných fajok'></sub-h>
+                <chooser class='second' :changeContent=changeContent :chooserContents=this.chooserContents></chooser>
+                <div class='shisha cont'>
+                <div v-if='currentContent != -1' class='menu-cont shi2'>
+                    <am-h class='mb' :t='shishaSets[currentContent].heading'></am-h>
+                    <shisha-item v-for='(shisha , index) in shishaSets[currentContent].shishas' :class='index%2==0 ? "" : "right"' :s_imgsrc='shisha.s_imgsrc' :h_imgsrc='shisha.h_imgsrc' :s_text='shisha.s_text' :h_text='shisha.h_text' :s_heading='shisha.s_heading' :h_heading='shisha.h_heading' ></shisha-item>
+                </div>
+        </div>
+                </div>`,
+    methods: {
+        changeContent : function(id){
+            this.currentContent = id-1
+            $("html, body").animate({ scrollTop: $('.chooser-cont').filter('.second').offset().top + $('.chooser-cont').filter('.second').height() - $('#navbar').height()-15 }, 600);
+        }
+    },
+    data: function(){
+        return{
+            flavors: ['mango tango','peach & mint','oragne & mint', 'two apples','ice lime on the rocks','double melon','ice bonbon','green lemon & mint','blueberry & mint','cola dragon','blue ice','chewing gum mint cinnamon','love 66','maracuya/passionfruit','mango tango ice','ice','fresh berry','hawaii','swiss bonbon'],
+            chooserContents: 
+                [
+                    {
+                        id:1,
+                       img_src: 'hookah.svg',
+                        heading:'Shisha classic'
+                    },{
+                        id:2,
+                       img_src: 'hookah.svg',
+                        heading:'Shishabucks'
+                    },{
+                        id:3,
+                       img_src: 'hookah.svg',
+                        heading:'Shisha exclusive'
+                    },{
+                        id:4,
+                       img_src: 'hookah.svg',
+                        heading:'Korunky'
+                    }
+                ],
+            currentContent: -1,
+             shishaSets:[
+                {
+                    heading:'shisha classic',
+                    shishas:[
+                        {
+                            s_imgsrc:'classic1',
+                            s_heading:'AVION STICK RS',
+                            s_text:'Vynikajúco vyvážený ťah, vyrobená z nehrdzavejúcej ocele v kvalite AISI 321, teda s prídavkom Titanu, ktorá sa používa v medicínskom a zbrojárenskom priemysle. Skoro všetci ostatní výrobcovia nerezových fajok používajú nižšiu potravinársku triedu AISI 304 alebo 316. Gejzírový spätný ventil.',
+                            h_imgsrc:'classic1_h',
+                            h_heading:'ORIGINÁL AVION STICK RS NÁUSTOK',
+                            h_text:'Veľmi jednoduchý, ľahký, ale vďaka kvalite AISI 321 vysoko hygienický náustok + soft touch hadica z potravinárskeho, antibakteriálneho silikónu.'
+                        }
+                    ]
+                },
+                 {
+                    heading:'shishabucks',
+                    shishas:[
+                        {
+                            s_imgsrc:'shishabucks1',
+                            s_heading:'SHISHABUCKS CLOUD MICRO',
+                            s_text:'Vynikajúca kanadská fajka z plexiskla a eloxovaného hliníka. Napriek tomu, že je z portfolia Shishabucks najmenšia, má podľa nás najlepší ťah. LED podsvietená.Odporúčame priobjednať si k nej do vázy farbivo alebo čerstvé ovocie. Podávame ju s účinným difúzorom, takže buble veľmi jemne.',
+                            h_imgsrc:'shishabucks1_h',
+                            h_heading:'ORIGINÁL SHISHABUCKS NÁUSTOK',
+                            h_text:'31 cm dlhý náustok z eloxovaného hliníku + soft touch hadica z potravinárskeho, antibakteriálneho silikónu.'
+                        }
+                    ]
+                },
+                 {
+                    heading:'shisha exclusive',
+                    shishas:[
+                        {
+                            s_imgsrc:'ex1',
+                            s_heading:'TAHTA s difúzorom',
+                            s_text:'Shisha od svetoznámeho egyptského výrobcu tradičných fajok El Nefes, ale v modernom prevedení. Obrovský priemer stredovej rúry spôsobuje extrémne ľahký ťah, takmer nulový odpor a účinný difúzor zabezpečuje absolútne ticho bez bublania vody vo váze pri fajčení. Najtichšia fajka v ponuke. ',
+                            h_imgsrc:'ex1_h',
+                            h_heading:'Starbuzz Phantom Hose',
+                            h_text:'Prémiová hadica z lekárskeho silikónu, soft touch a s ľahkým, ergonomickým, futuristickým náustkom z eloxovaného hliníku od výrobcu luxusných fajok z USA. Výborne vyladený ťah.'
+                        },
+                        {
+                            s_imgsrc:'ex2',
+                            s_heading:'TAHTA bez difúzora',
+                            s_text:'Rovnaké prednosti, ako TAHTA s difúzorom, ale keďže nemá difúzor, tak počuť výrazné bublanie. Upozornenie: Shisha má nepriehľadnú vázu, takže v tomto prípade neodporúčame priobjednávať prídavky do vázy. (napr. čerstvé ovocie do vázy, farbivo do vázy)',
+                            h_imgsrc:'ex1_h',
+                            h_heading:'Starbuzz Phantom Hose',
+                            h_text:'Prémiová hadica z lekárskeho silikónu, soft touch a s ľahkým, ergonomickým, futuristickým náustkom z eloxovaného hliníku od výrobcu luxusných fajok z USA. Výborne vyladený ťah.'
+                        },
+                        {
+                            s_imgsrc:'ex3',
+                            s_heading:'AVION SMART RS',
+                            s_text:'Top model z portfólia špičkového ruského výrobcu Avion Hookah. Jej exkluzivitou jej okrem perfektného spracovania detailov a precízne vyladeného ťahu aj to, že je vyrobená z nehrdzavejúcej ocele v kvalite AISI 321, teda s prídavkom titanu, ktorá sa používa v medicínskom a zbrojárenskom priemysle. Skoro všetci ostatní výrobcovia nerezových fajok používajú nižšiu potravinársku triedu AISI 304 alebo 316. Nádherný gejzírový efekt spätného ventilu. Podávame ju s originálnym difúzorom, ktorý iba veľmi jemne tlmí bublanie.',
+                            h_imgsrc:'ex3_h',
+                            h_heading:'ORIGINÁL AVION SMART RS hadica',
+                            h_text:'Luxusný 40cm dlhý náustok vyrobený z nerezovej ocele s prídavkom Titánu + soft touch hadica z potravinárskeho, antibakteriálneho silikónu.'
+                        },
+                        {
+                            s_imgsrc:'ex4',
+                            s_heading:'MATTPEAR SIMPLE M SLIM',
+                            s_text:'Na prvý pohľad obyčajná, menšia fajka z nerezovej ocele a prevahou potravinárskeho plastu. Napriek svojej jednoduchosti má tak vyvážený ťah, rozmery a kvalitu spracovania, že vyhrala prestížnu cenu John Calliano Awards! Podávame ju s originálnym difúzorom, ktorý iba veľmi jemne tlmí bublanie.',
+                            h_imgsrc:'ex4_h',
+                            h_heading:'ORIGINÁL MATTPEAR NÁUSTOK',
+                            h_text:'Prémiový, 33 cm dlhý, nerezový náustok so soft touch hadicou z potravinárskeho, antibakteriálneho silikónu.'
+                        },
+                        {
+                            s_imgsrc:'ex5',
+                            s_heading:'RAKETA',
+                            s_text:'Elegantná shisha s nerezovými vnútornosťami vyrobená na mieru. Majestátne veľká, LED podsvietená. Podávame ju s difúzorom, ktorý výrazne tlmí bublanie. Odporúčame do nej priobjednať ovocný koktail + farbivo',
+                            h_imgsrc:'ex1_h',
+                            h_heading:'Starbuzz Phantom Hose',
+                            h_text:'Prémiová hadica z lekárskeho silikónu, soft touch a s ľahkým, ergonomickým, futuristickým náustkom z eloxovaného hliníku od výrobcu luxusných fajok z USA. Výborne vyladený ťah.'
+                        },
+                        {
+                            s_imgsrc:'ex6',
+                            s_heading:'PULSE',
+                            s_text:'Vyrobená z chemického skla. LED podsvietená. Ťažší ťah, daný špirálovitou konštrukciou. Integrovaný sklenený difúzor. Sklo je považované za materiál s najlepším prenosom chuti.',
+                            h_imgsrc:'ex1_h',
+                            h_heading:'Starbuzz Phantom Hose',
+                            h_text:'Prémiová hadica z lekárskeho silikónu, soft touch a s ľahkým, ergonomickým, futuristickým náustkom z eloxovaného hliníku od výrobcu luxusných fajok z USA. Výborne vyladený ťah.'
+                        },
+                        {
+                            s_imgsrc:'ex7',
+                            s_heading:'TOTEM IDOL',
+                            s_text:'Veľmi zaujímavá shisha od Ukrajinského výrobcu TOTEM HOOKAH. Veľký priemer rúr zabezpečuje ľahký ťah. Nádherný výfukový ventil po obvode srdca fajky vytvára efekt dymových kruhov. Podávame ju bez difúzora, takže hlasno buble. ',
+                            h_imgsrc:'ex7_h',
+                            h_heading:'ORIGINÁL TOTEM NÁUSTOK',
+                            h_text:'29cm dlhý, ergonomický náustok s čistými líniami + soft touch hadica z potravinárskeho, antibakteriálneho silikónu.'
+                        },
+                        {
+                            s_imgsrc:'ex8',
+                            s_heading:'WOOKAH',
+                            s_text:'Wookah je už klasika. Pre svoju kvalitu prevedenia, odolnosť a vyvážený ťah si získala veľkú popularitu na celom svete. Hoci táto kráska z Poľska už určite nie je novinkou v Shisha svete a mnohí výrobcovia ju už konštrukčne predbehli, nemôže u nás chýbať. Bez difúzora, takže hlasno buble. ',
+                            h_imgsrc:'ex8_h',
+                            h_heading:'ORIGINÁL WOOKAH NÁUSTOK',
+                            h_text:'Nádherný 28 cm dlhý drevený náustok s koženým poťahom držadla + soft touch hadica z potravinárskeho, antibakteriálneho silikónu, potiahnutá prešívanou pravou ťavou kožou'
+                        },
+                        {
+                            s_imgsrc:'ex9',
+                            s_heading:'KHMARA SINTÉSI SUPERIOR ELECTRO',
+                            s_text:'Výnimočná, ukrajinská fajka, ktorá hneď na prvý pohľad zaujme atypickým tanierikom a Lichtenbergovými obrazcami na svojom tele, to znamená, že kresby sú vypalované vysokým napätím . Vynikajúci ťah. Očarujúci obvodový spätný ventil. Podávame ju s originálnym difúzorom, ktorý iba veľmi jemne tlmí bublanie.',
+                            h_imgsrc:'ex9_h',
+                            h_heading:'ORIGINÁL KHMARA NÁUSTOK',
+                            h_text:'37 cm dlhý, masívny drevený náustok + soft touch hadica z potravinárskeho, antibakteriálneho silikónu.'
+                        },
+                        {
+                            s_imgsrc:'ex10',
+                            s_heading:'KARMA 1.1',
+                            s_text:'Až 72 cm vysoká, špičková fajka z Ukrajiny. Okamžite si nás získala a nedáme na ňu dopustiť. Hrubé rúry, presné spracovanie a masívne bublanie si zamiluje každý. Bez difúzora, takže hlasno buble.',
+                            h_imgsrc:'ex10_h',
+                            h_heading:'ORIGINÁL KARMA NÁUSTOK',
+                            h_text:'41 cm dlhý, masívny drevený náustok + soft touch hadica z potravinárskeho, antibakteriálneho silikónu.'
+                        }
+                    ]
+                }
+             ]
+              }}})
 
 Vue.component('cold-bev',{
     template: `<div class='cont'>
@@ -115,14 +363,10 @@ Vue.component('cold-bev',{
                     <am-h t='' am2='0,25L'></am-h>
                     <item-wrapper>
                         <div>
-                            <menu-item name='Cappy pomaranč 100%' price1='' price2='2,10 EUR
-' bonusinfo=''></menu-item>
-                            <menu-item name='Cappy multivitamín' price1='' price2='2,10 EUR
-' bonusinfo=''></menu-item>
-                            <menu-item name='Kinley Tonic Water' price1='' price2='2,10 EUR
-' bonusinfo=''></menu-item>
-                            <menu-item name='Kinley Bitter Rose' price1='' price2='2,10 EUR
-' bonusinfo=''></menu-item>
+                            <menu-item name='Cappy pomaranč 100%' price1='' price2='2,10' bonusinfo=''></menu-item>
+                            <menu-item name='Cappy multivitamín' price1='' price2='2,10' bonusinfo=''></menu-item>
+                            <menu-item name='Kinley Tonic Water' price1='' price2='2,10' bonusinfo=''></menu-item>
+                            <menu-item name='Kinley Bitter Rose' price1='' price2='2,10' bonusinfo=''></menu-item>
                         </div>
                     </item-wrapper>
                     <am-h t='VÝČAPNÉ NEALKO' am1='0,3l' am2='0,5l'></am-h>
@@ -271,7 +515,41 @@ Vue.component('hot-bev',{
               })
 
 Vue.component('snacks',{
-    template: `<sub-h t='Niečo pod zub'></sub-h>`
+    template: `<div class='cont'>
+                <sub-h t='Niečo pod zub'></sub-h>
+                <div class='menu-cont'>
+                    <am-h t='Niečo slané'></am-h>
+                    <item-wrapper>
+                        <div>
+                            <menu-item name='Chrumky arašidové, 60g' price1='' price2='1,50'></menu-item>
+                            <menu-item name='Tyčinky slané, 45g' price1='' price2='1,50'></menu-item>
+                        </div>
+                    </item-wrapper>
+                     <item-wrapper>
+                        <div>
+                            <menu-item name='Domáce Panini, 170g' price1='' price2='3,50' bonusinfo='na masle,slaninka,mozzarella, parmezán,rucola + sladká chilli omáčka'></menu-item>
+                        </div>
+                    </item-wrapper>
+                    <am-h t='Niečo sladké'></am-h>
+                     <item-wrapper>
+                        <div>
+                            <menu-item name='Horúca čokoláda, 100g' price1='' price2='3,10' bonusinfo='Pravá belgická horúca čokoláda'></menu-item>
+                            <menu-item name='Šľahačka, 30g' price1='' price2='0,50' bonusinfo='pravá šľahačka'></menu-item>
+                            <menu-item name='Teplé Granko, 0,25l' price1='' price2='1,90' bonusinfo='klasika ako od starej mamy'></menu-item>
+                            <menu-item name='Príplatok za bezlaktózové Granko/Čokoládu' price1='' price2='0,50'></menu-item>
+                        </div>
+                    </item-wrapper>
+                    <am-h t='Iné'></am-h>
+                    <item-wrapper>
+                        <div>
+                            <menu-item name='Med do čaju do 0,6l' price2='0,50'></menu-item>
+                            <menu-item name='Med do čaju do 1,2l' price2='1,00'></menu-item>
+                            <menu-item name='Zázvor do čaju do 0,6l' price2='0,70'></menu-item>
+                            <menu-item name='Zázvor do čaju 1,2l' price2='1,40'></menu-item>
+                        </div>
+                    </item-wrapper>
+                </div>
+                </div>`
               })
 
 

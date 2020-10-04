@@ -1,27 +1,41 @@
 @import './menu.scss';
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 $primary : #603813;
-$secondary: rgb(103,73,41);
-$tertiary: rgb(162,142,116);
-$bonus: rgb(141,106,72);
+$secondary: rgb(103, 73, 41);
+$tertiary: rgb(162, 142, 116);
+$separator: #A97B50;
+$bonus: rgb(141, 106, 72);
 $short : all .4s;
+$white: #D8D9DA;
+$red: #B31E3F;
+$yellow: #C68946;
+$light-yellow: #A97B50;
+$purple: #642E8C;
+$dark-brown: #412715;
 
 @mixin tablet {
-  @media (max-width: 900px) {
-    @content;
-  }
+    @media (max-width: 900px) {
+        @content;
+    }
 }
 
-@mixin phone{
+@mixin phone {
     @media (max-width: 600px) {
-    @content;
-  }
+        @content;
+    }
 }
+
+@mixin small {
+    @media (max-width: 450px) {
+        @content;
+    }
+}
+
 
 @mixin desktop {
-  @media (min-width: 900px) {
-    @content;
-  }
+    @media (min-width: 900px) {
+        @content;
+    }
 }
 
 * {
@@ -48,11 +62,14 @@ body {
 
     .cont {
         width: 70%;
+        margin-right: auto;
+        margin-left: auto;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        @include phone{
+
+        @include phone {
             width: 94%;
         }
     }
@@ -79,7 +96,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    @include phone{
+
+    @include phone {
         margin: 20px 0;
     }
 
@@ -96,7 +114,8 @@ body {
         height: 200px;
         padding: 20px;
         margin: 50px;
-        @include phone(){
+
+        @include phone() {
             width: 40%;
             margin: 5px;
         }
@@ -105,10 +124,11 @@ body {
             filter: invert(100%);
             width: 90px;
             height: 90px;
-            @include tablet(){
-            width: 50%;
-            height: auto;
-        }
+
+            @include tablet() {
+                width: 50%;
+                height: auto;
+            }
         }
 
         div {
@@ -117,7 +137,7 @@ body {
             text-align: center;
         }
 
-        @include desktop{
+        @include desktop {
             &:hover {
                 transform: scale(1.1);
             }
@@ -148,10 +168,22 @@ body {
     font-size: 22px;
     text-transform: uppercase;
     position: relative;
-    
-    .main{
+
+    .main {
         max-width: 40%;
         min-height: 30px;
+
+        &.only-one {
+            max-width: 80%;
+
+            @include phone {
+                max-width: 60%;
+            }
+        }
+
+        &.zero {
+            max-width: 100%;
+        }
     }
 
     .am1 {
@@ -167,7 +199,7 @@ body {
     }
 }
 
-.type-h{
+.type-h {
     font-size: 16px;
     background: $tertiary;
     width: fit-content;
@@ -176,7 +208,7 @@ body {
     text-transform: uppercase;
     border-radius: 15px;
     margin-top: -10px;
-    transform: translate(0,20px);
+    transform: translate(0, 20px);
 }
 
 .menu-cont {
@@ -188,53 +220,354 @@ body {
     border-radius: 25px;
     margin-bottom: 100px;
     z-index: 2;
+    &.shi{
+        margin-bottom: 20px;
+    }
 }
 
-.item-wrapper{
+.item-wrapper {
     background: $secondary;
     padding: 10px;
     border-radius: 25px;
     margin: 10px 0;
 }
 
-.menu-item{
+.menu-item {
     margin: 5px 0;
     position: relative;
     font-size: 16px;
-    @include phone{
+
+    @include phone {
         font-size: 14px;
     }
-    .name{
+
+    .name {
         max-width: 60%;
-        @include phone{
+
+        @include phone {
             max-width: 40%;
         }
-        &.only-one{
+
+        &.only-one {
             max-width: 80%;
-            @include phone{
+
+            @include phone {
                 max-width: 60%;
             }
         }
-        &.zero{
+
+        &.zero {
             max-width: 100%;
         }
     }
-    .price1{
+
+    .price1 {
         position: absolute;
         top: 0;
         right: 30%;
     }
-    .price2{
+
+    .price2 {
         position: absolute;
         top: 0;
         right: 20px;
-        @include phone{
+
+        @include phone {
             right: 5px;
         }
     }
-    .bonus-info{
-         max-width: 60%;
+
+    .bonus-info {
+        max-width: 60%;
         color: $bonus;
         font-size: 13px;
     }
 }
+
+.setup-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+        flex-direction: column;
+    }
+
+    margin-top: 20px;
+
+    &.two {
+        margin-top: 60px;
+    }
+
+    .item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 2;
+
+        @include tablet {
+            flex-direction: row-reverse;
+            align-self: flex-start;
+            width: 100%;
+        }
+
+        @include small {
+            width: 100%;
+        }
+
+        .h {
+            padding: 10px;
+            color: black;
+            font-size: 15px;
+            margin: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+
+            &.white {
+                background: $white;
+            }
+
+            &.red {
+                background: $red;
+            }
+
+            &.yellow {
+                background: $yellow;
+            }
+
+            &.purple {
+                background: $purple;
+            }
+        }
+
+        img {
+            margin: 10px;
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+
+            @include tablet {
+                width: 60%;
+            }
+
+            @include phone {
+                margin-right: auto;
+            }
+        }
+
+        .price {
+            position: absolute;
+            background: $dark-brown;
+            padding: 10px;
+            bottom: 0;
+            right: 10px;
+
+            @include tablet {
+                bottom: 40px;
+            }
+        }
+    }
+
+    .text {
+        font-size: 23px;
+        flex: 1;
+        color: $light-yellow;
+        text-align: center;
+
+        @include tablet {
+            margin: 10px;
+        }
+    }
+}
+
+.flavors-and-bonus-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    @include tablet {
+        flex-direction: column;
+    }
+
+    .flavors-cont {
+        flex: 2;
+
+        @include tablet {
+            align-self: flex-start;
+            padding-bottom: 20px;
+        }
+
+        .flavors {
+            font-size: 15px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+    }
+
+    .bonus-cont {
+        flex: 3;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include small {
+            flex-direction: column;
+        }
+    }
+}
+
+.bonus-item {
+    display: flex;
+    width: 47%;
+
+    @include small {
+        width: 100%;
+    }
+
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+
+    img {
+        width: 60%;
+        padding: 10px;
+        height: auto;
+        object-fit: contain;
+
+        @include small {
+            width: 45%;
+        }
+    }
+
+    .heading {
+        font-size: 17px;
+    }
+
+    .price {
+        position: absolute;
+        font-size: 17px;
+        background: $dark-brown;
+        padding: 7px;
+        border-radius: 14px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .small {
+        .heading {
+            font-size: 17px;
+            position: relative;
+
+            .price {
+                position: absolute;
+                font-size: 17px;
+                background: $dark-brown;
+                padding: 7px;
+                border-radius: 14px;
+                left: 0;
+                right: auto;
+                bottom: -40px;
+            }
+        }
+    }
+}
+
+.centered{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mt{
+    margin-top: 60px;
+}
+
+.mb{
+    margin-bottom: 40px;
+}
+
+.shisha-item{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    position: relative;
+    &~&{
+    &::before{
+        content: '';
+        background: $separator;
+        position: absolute;
+        top: -30px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+    }
+    }
+    .s-img{
+        padding: 10px;
+        object-fit: contain;
+        width: 40%;
+        margin-right: 30px;
+        @include tablet{
+            display: none;
+        }
+    }
+    .cont-sh{
+        .s-cont{
+            margin-bottom: 20px;
+            .heading{
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 19px;
+                margin-bottom: 10px;
+            } 
+            .text{
+                font-size: 15px;
+            }
+            .s-img-m{
+                width: 100%;
+                padding: 10px;
+                object-fit: contain;
+                display: none;
+                @include tablet{
+                    display: block;
+                }
+            }
+        }
+        .h-cont{
+          .heading{
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 19px;
+                margin-bottom: 10px;
+            } 
+            .text{
+                font-size: 15px;
+            }
+            .h-img{
+                object-fit: contain;
+                width: 50%;
+                padding-top: 10px;
+                @include tablet{
+                    padding: 10px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &.right{
+        flex-direction: row-reverse;
+        .s-img{
+            margin-right: 0;
+            margin-left: 30px;
+        }
+    }
+}
+
+
+
+
+//NEZABUDNUT ODSTRANIT FLEX PRI F-DIR COLUMN

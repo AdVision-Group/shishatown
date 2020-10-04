@@ -37,12 +37,12 @@
 </head>
 
 <body>
-   <canvas id="canvas" style="position: fixed; width: 100vw;height: 100vh;
+    <canvas id="canvas" style="position: fixed; width: 100vw;height: 100vh;
    "></canvas>
     <nav id="navbar">
         <input type="checkbox" id="check" onchange='handleChange(this);'>
         <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
+            <ion-icon name="menu-outline"></ion-icon>
         </label>
         <ul class="menu">
             <img src=images/logo2.png alt='Shisha Town Logo' class='logo'>
@@ -61,8 +61,11 @@
         </ul>
     </nav>
     <div class='header'>
-        <div class='header_curved_text animated wow fadeIn'><img src='images/heading.webp' alt='Shisha Town nadpis'>
+        <img src="images/mainbg.jpg">
+        <div class='header_curved_text animated wow fadeIn'>
+            <img src='images/heading.webp' alt='Shisha Town nadpis'>
         </div>
+        <ion-icon class='bouncy' name="arrow-down-circle-outline"></ion-icon>
     </div>
     <div class='main_content'>
         <h1>Shisha Town Bratislava</h1>
@@ -712,7 +715,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="js/hover.js"></script>
     <script src="js/materialize.min.js"></script>
-    <script src="https://kit.fontawesome.com/172b571a75.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <script type="text/javascript" src="mdb/js/bootstrap.min.js"></script>
     <script src="js/smoke.js"></script>
     <script src="js/main.js"></script>

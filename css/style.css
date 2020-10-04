@@ -31,7 +31,7 @@ h1{
 	font-size: 30px;
 	color: white;
 	float: right;
-	line-height: 80px;
+	line-height: 64px;
 	margin-right: 40px;
 	cursor: pointer;
 	display: none;
@@ -110,7 +110,7 @@ h1{
 
 @media (max-width : 900px) {
 	nav{
-		height: 80px;
+		height: 60px;
 	}
 
 	.logo{
@@ -135,7 +135,7 @@ h1{
 		float: right;
 		display: block;
 		background: black;
-		top: 80px;
+		top: 60px;
 		left: -100%;
 		text-align: center;
 		transition: all .5s;
@@ -160,15 +160,49 @@ h1{
 }
 
 .header{
-	height:700px;
-	background-image:url("../images/hok3.webp");
+    position: relative;
+    height: 100vh;
 	transition:all ease 0.5s;
-	background-size: 1600px 700px;
+	background-size: auto 100vh;
 	background-position: center center;
 }
 
+.header > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 5;
+    display: block;
+    position: absolute;
+}
+
+
+.header > ion-icon{
+    z-index: 7;
+    cursor: pointer;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    font-size: 70px;
+    transition: transform .4s ease-in-out, color .2s;
+}
+
+/*.header > ion-icon:hover{
+    color: rgb(141, 106, 72);
+}*/
+
+.header > ion-icon.anim{
+    transform: translateY(-30px)
+}
+
+.header_curved_text{
+    z-index: 6;
+    position: relative;
+}
 
 .header_curved_text img{
+    z-index: 4;
 	display: block;
 	width:95%;
 	max-width:700px;
@@ -206,10 +240,8 @@ h1{
 
 .main_content{
 	margin:0;
-	padding-top:50px;
-	margin-top:-60px;
+	padding-top:100px;
     background: black;
-	/*background-image:url("../images/Background.webp");*/
 	background-position: center top;
 	overflow: hidden;
 }
@@ -614,12 +646,6 @@ td~td{
 /* Safari Support*/
 @media not all and (min-resolution:.001dpcm) { 
     @media {
-        .main_content { 
-            background-image:url("../images/Background.png");
-        }
-		.header { 
-            background-image:url("../images/hok3.png");
-        }
 		.review_item.one{
 			content: url('../images/reviews/1.png');
 		}

@@ -142,6 +142,8 @@ body {
   align-items: center; }
   .main-cont .cont {
     width: 70%;
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -224,6 +226,13 @@ body {
   .am-h .main {
     max-width: 40%;
     min-height: 30px; }
+    .am-h .main.only-one {
+      max-width: 80%; }
+      @media (max-width: 600px) {
+        .am-h .main.only-one {
+          max-width: 60%; } }
+    .am-h .main.zero {
+      max-width: 100%; }
   .am-h .am1 {
     position: absolute;
     right: 30%;
@@ -253,6 +262,8 @@ body {
   border-radius: 25px;
   margin-bottom: 100px;
   z-index: 2; }
+  .menu-cont.shi {
+    margin-bottom: 20px; }
 
 .item-wrapper {
   background: #674929;
@@ -294,3 +305,210 @@ body {
     max-width: 60%;
     color: #8d6a48;
     font-size: 13px; }
+
+.setup-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; }
+  @media (max-width: 900px) {
+    .setup-cont {
+      flex-direction: column; } }
+  .setup-cont.two {
+    margin-top: 60px; }
+  .setup-cont .item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 2; }
+    @media (max-width: 900px) {
+      .setup-cont .item {
+        flex-direction: row-reverse;
+        align-self: flex-start;
+        width: 100%; } }
+    @media (max-width: 450px) {
+      .setup-cont .item {
+        width: 100%; } }
+    .setup-cont .item .h {
+      padding: 10px;
+      color: black;
+      font-size: 15px;
+      margin: 10px;
+      text-transform: uppercase;
+      font-weight: bold; }
+      .setup-cont .item .h.white {
+        background: #D8D9DA; }
+      .setup-cont .item .h.red {
+        background: #B31E3F; }
+      .setup-cont .item .h.yellow {
+        background: #C68946; }
+      .setup-cont .item .h.purple {
+        background: #642E8C; }
+    .setup-cont .item img {
+      margin: 10px;
+      object-fit: cover;
+      width: 100%;
+      height: auto; }
+      @media (max-width: 900px) {
+        .setup-cont .item img {
+          width: 60%; } }
+      @media (max-width: 600px) {
+        .setup-cont .item img {
+          margin-right: auto; } }
+    .setup-cont .item .price {
+      position: absolute;
+      background: #412715;
+      padding: 10px;
+      bottom: 0;
+      right: 10px; }
+      @media (max-width: 900px) {
+        .setup-cont .item .price {
+          bottom: 40px; } }
+  .setup-cont .text {
+    font-size: 23px;
+    flex: 1;
+    color: #A97B50;
+    text-align: center; }
+    @media (max-width: 900px) {
+      .setup-cont .text {
+        margin: 10px; } }
+
+.flavors-and-bonus-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; }
+  @media (max-width: 900px) {
+    .flavors-and-bonus-cont {
+      flex-direction: column; } }
+  .flavors-and-bonus-cont .flavors-cont {
+    flex: 2; }
+    @media (max-width: 900px) {
+      .flavors-and-bonus-cont .flavors-cont {
+        align-self: flex-start;
+        padding-bottom: 20px; } }
+    .flavors-and-bonus-cont .flavors-cont .flavors {
+      font-size: 15px;
+      margin-bottom: 5px;
+      text-transform: uppercase; }
+  .flavors-and-bonus-cont .bonus-cont {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap; }
+    @media (max-width: 450px) {
+      .flavors-and-bonus-cont .bonus-cont {
+        flex-direction: column; } }
+
+.bonus-item {
+  display: flex;
+  width: 47%;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative; }
+  @media (max-width: 450px) {
+    .bonus-item {
+      width: 100%; } }
+  .bonus-item img {
+    width: 60%;
+    padding: 10px;
+    height: auto;
+    object-fit: contain; }
+    @media (max-width: 450px) {
+      .bonus-item img {
+        width: 45%; } }
+  .bonus-item .heading {
+    font-size: 17px; }
+  .bonus-item .price {
+    position: absolute;
+    font-size: 17px;
+    background: #412715;
+    padding: 7px;
+    border-radius: 14px;
+    right: 10px;
+    bottom: 10px; }
+  .bonus-item .small .heading {
+    font-size: 17px;
+    position: relative; }
+    .bonus-item .small .heading .price {
+      position: absolute;
+      font-size: 17px;
+      background: #412715;
+      padding: 7px;
+      border-radius: 14px;
+      left: 0;
+      right: auto;
+      bottom: -40px; }
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.mt {
+  margin-top: 60px; }
+
+.mb {
+  margin-bottom: 40px; }
+
+.shisha-item {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  position: relative; }
+  .shisha-item ~ .shisha-item::before {
+    content: '';
+    background: #A97B50;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px; }
+  .shisha-item .s-img {
+    padding: 10px;
+    object-fit: contain;
+    width: 40%;
+    margin-right: 30px; }
+    @media (max-width: 900px) {
+      .shisha-item .s-img {
+        display: none; } }
+  .shisha-item .cont-sh .s-cont {
+    margin-bottom: 20px; }
+    .shisha-item .cont-sh .s-cont .heading {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 19px;
+      margin-bottom: 10px; }
+    .shisha-item .cont-sh .s-cont .text {
+      font-size: 15px; }
+    .shisha-item .cont-sh .s-cont .s-img-m {
+      width: 100%;
+      padding: 10px;
+      object-fit: contain;
+      display: none; }
+      @media (max-width: 900px) {
+        .shisha-item .cont-sh .s-cont .s-img-m {
+          display: block; } }
+  .shisha-item .cont-sh .h-cont .heading {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 19px;
+    margin-bottom: 10px; }
+  .shisha-item .cont-sh .h-cont .text {
+    font-size: 15px; }
+  .shisha-item .cont-sh .h-cont .h-img {
+    object-fit: contain;
+    width: 50%;
+    padding-top: 10px; }
+    @media (max-width: 900px) {
+      .shisha-item .cont-sh .h-cont .h-img {
+        padding: 10px;
+        width: 100%; } }
+  .shisha-item.right {
+    flex-direction: row-reverse; }
+    .shisha-item.right .s-img {
+      margin-right: 0;
+      margin-left: 30px; }
