@@ -596,7 +596,7 @@ Vue.component('pricing', {
     methods: {
         changeContent: function(id){
             this.currentContent = id
-            $("html, body").animate({ scrollTop: $('.chooser-cont').offset().top + $('.chooser-cont').height() - $('#navbar').height()-15 }, 600);
+            $("html, body").animate({ scrollTop: $('.chooser-cont').offset().top + $('.chooser-cont').height() - $('#navbar').height() }, 600);
         }
     }
 })
