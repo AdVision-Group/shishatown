@@ -194,12 +194,13 @@ body {
         margin: 5px; } }
     .chooser-cont .chooser-box img {
       filter: invert(100%);
-      width: 90px;
-      height: 90px; }
+      max-width: 90px;
+      max-height: 90px;
+      object-fit: cover; }
       @media (max-width: 900px) {
         .chooser-cont .chooser-box img {
-          width: 50%;
-          height: auto; } }
+          max-width: 70px;
+          max-height: 70px; } }
     .chooser-cont .chooser-box div {
       font-size: 20px;
       margin-top: 20px;

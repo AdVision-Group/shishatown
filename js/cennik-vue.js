@@ -151,10 +151,10 @@ Vue.component('shisha',{
                         <div class="flavors" v-for='(flavor, index) in flavors'>{{index+1}}. {{flavor}}</div>
                     </div>
                     <div class="bonus-cont">
-                        <bonus-item  imgsrc='ex8.jpg' heading='Ľad do vázy' price='1,00'></bonus-item>
-                        <bonus-item imgsrc='ex8.jpg' heading='Čerstvé ovocie do vázy' price='2,00'></bonus-item>
-                        <bonus-item imgsrc='ex8.jpg' heading='Farbivo do vázy' price='1,50'></bonus-item>
-                        <bonus-item imgsrc='ex8.jpg' heading='Jednorázová hadica' price='2,00'></bonus-item>
+                        <bonus-item  imgsrc='ice.png' heading='Ľad do vázy' price='1,00'></bonus-item>
+                        <bonus-item imgsrc='fruit.png' heading='Čerstvé ovocie do vázy' price='2,00'></bonus-item>
+                        <bonus-item imgsrc='coloring.png' heading='Farbivo do vázy' price='1,50'></bonus-item>
+                        <bonus-item imgsrc='hose.png' heading='Jednorázová hadica' price='2,00'></bonus-item>
                     </div>
                 </div>
                 </div>
@@ -181,15 +181,15 @@ Vue.component('shisha',{
                 [
                     {
                         id:1,
-                       img_src: 'hookah.svg',
+                       img_src: 'classic.png',
                         heading:'Shisha classic'
                     },{
                         id:2,
-                       img_src: 'hookah.svg',
+                       img_src: 'shishabucks.png',
                         heading:'Shishabucks'
                     },{
                         id:3,
-                       img_src: 'hookah.svg',
+                       img_src: 'exclusive.png',
                         heading:'Shisha exclusive'
                     },{
                         id:4,
@@ -598,6 +598,9 @@ Vue.component('pricing', {
             this.currentContent = id
             $("html, body").animate({ scrollTop: $('.chooser-cont').offset().top + $('.chooser-cont').height() - $('#navbar').height() }, 600);
         }
+    },
+    mounted(){
+        this.changeContent(window.location.href.split('cont=')[1][0])
     }
 })
 
