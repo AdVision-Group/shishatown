@@ -546,6 +546,17 @@ body {
                 font-size: 19px;
                 margin-bottom: 10px;
             } 
+            
+            .bonus-heading{
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 18px;
+                padding: 10px;
+                margin-left: -10px;
+                background: $dark-brown;
+                border-radius: 12px;
+                margin-bottom: 20px;
+            }
             .text{
                 font-size: 15px;
             }

@@ -60,8 +60,10 @@ a{
 }
 
 h1{
-	color:black;
+	color:transparent;
 	font-weight:bold;
+    user-select: none;
+    position: fixed;
 }
 
 
@@ -300,10 +302,13 @@ h1{
 	position:relative;
 	max-width:1000px;
 	margin-top: 150px;
-    margin-bottom: 150px;
+    margin-bottom: 200px;
 	display:flex;
 	margin-left:auto;
 	margin-right:auto;
+    @include tablet{
+        margin-bottom: 100px;
+    }
 }
 
 .our-menu{
@@ -321,6 +326,13 @@ h1{
     align-items: center;
     & > p{
         width: 80%;
+        @include phone{
+            width: 100%;
+        }
+    }
+    @include tablet{
+        margin-top: 0;
+        margin-bottom: 80px;
     }
 }
 
@@ -739,7 +751,7 @@ td~td{
         padding: 20px;
         margin: 10px;
         @include phone() {
-            width: 40%;
+            width: 47%;
             margin: 5px;
         }
     .chooser-box {

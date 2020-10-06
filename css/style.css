@@ -18,8 +18,10 @@ a {
   cursor: pointer; }
 
 h1 {
-  color: black;
-  font-weight: bold; }
+  color: transparent;
+  font-weight: bold;
+  user-select: none;
+  position: fixed; }
 
 .checkbtn {
   font-size: 30px;
@@ -209,10 +211,13 @@ h1 {
   position: relative;
   max-width: 1000px;
   margin-top: 150px;
-  margin-bottom: 150px;
+  margin-bottom: 200px;
   display: flex;
   margin-left: auto;
   margin-right: auto; }
+  @media (max-width: 900px) {
+    .about_us {
+      margin-bottom: 100px; } }
 
 .our-menu {
   width: 90%;
@@ -229,6 +234,13 @@ h1 {
   align-items: center; }
   .our-menu > p {
     width: 80%; }
+    @media (max-width: 600px) {
+      .our-menu > p {
+        width: 100%; } }
+  @media (max-width: 900px) {
+    .our-menu {
+      margin-top: 0;
+      margin-bottom: 80px; } }
 
 .nav_offset {
   position: absolute;
@@ -569,7 +581,7 @@ td ~ td {
     margin: 10px; }
     @media (max-width: 600px) {
       .chooser-cont .link {
-        width: 40%;
+        width: 47%;
         margin: 5px; } }
     .chooser-cont .link .chooser-box {
       display: flex;

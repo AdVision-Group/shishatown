@@ -63,7 +63,7 @@ setInterval(() => {
 },2000)
 
 setInterval(() => {
-    if (scrollY > window.innerHeight){
+    if (scrollY > window.innerHeight || window.subpage){
         var n = .5
         var t = Math.floor(Math.random() * 200) + 100
         x = Math.floor(Math.random() * screen.width)
@@ -75,7 +75,6 @@ setInterval(() => {
     }
 }, mq.matches ? 50 : 20)
 setTimeout(function () {
-
     party.stop() // stop animating
 
     for (var i = 0; i < 10; i++) {

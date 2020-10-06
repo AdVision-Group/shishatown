@@ -1,3 +1,5 @@
+window.subpage = true
+
 Vue.component('item-wrapper',{
     template:`
     <div class='item-wrapper'>
@@ -82,12 +84,13 @@ Vue.component('bonus-item',{
 })
 
 Vue.component('shisha-item',{
-    props:['s_imgsrc','h_imgsrc','s_heading','h_heading','s_text','h_text'],
+    props:['s_imgsrc','h_imgsrc','s_heading','h_heading','s_text','h_text','bonus_heading'],
     template:`
         <div class="shisha-item">
             <img class="s-img" :src='"images/cennik/" + s_imgsrc  + ".jpg"'>
             <div class="cont-sh">
                 <div class="s-cont">
+                    <div v-if='bonus_heading' class="bonus-heading">{{bonus_heading}}</div>
                     <div class="heading">{{s_heading}}</div>
                     <div class="text">{{s_text}}</div>
                     <img class="s-img-m" :src='"images/cennik/" + s_imgsrc  + ".jpg"'>
@@ -95,7 +98,7 @@ Vue.component('shisha-item',{
                 <div class="h-cont">
                     <div class="heading">{{h_heading}}</div>
                     <div class="text">{{h_text}}</div>
-                    <img class="h-img":src='"images/cennik/" + h_imgsrc + ".jpg"'>
+                    <img v-if='h_imgsrc' class="h-img":src='"images/cennik/" + h_imgsrc + ".jpg"'>
                 </div>
             </div>
         </div>
@@ -164,7 +167,7 @@ Vue.component('shisha',{
                 <div class='shisha cont'>
                 <div v-if='currentContent != -1' class='menu-cont shi2'>
                     <am-h class='mb' :t='shishaSets[currentContent].heading'></am-h>
-                    <shisha-item v-for='(shisha , index) in shishaSets[currentContent].shishas' :class='index%2==0 ? "" : "right"' :s_imgsrc='shisha.s_imgsrc' :h_imgsrc='shisha.h_imgsrc' :s_text='shisha.s_text' :h_text='shisha.h_text' :s_heading='shisha.s_heading' :h_heading='shisha.h_heading' ></shisha-item>
+                    <shisha-item v-for='(shisha , index) in shishaSets[currentContent].shishas' :class='index%2==0 ? "" : "right"' :s_imgsrc='shisha.s_imgsrc' :bonus_heading='shisha.bonus_heading' :h_imgsrc='shisha.h_imgsrc' :s_text='shisha.s_text' :h_text='shisha.h_text' :s_heading='shisha.s_heading' :h_heading='shisha.h_heading' ></shisha-item>
                 </div>
         </div>
                 </div>`,
@@ -309,7 +312,28 @@ Vue.component('shisha',{
                             h_text:'41 cm dlhý, masívny drevený náustok + soft touch hadica z potravinárskeho, antibakteriálneho silikónu.'
                         }
                     ]
-                }
+                },
+                 {
+                    heading:'korunky',
+                    shishas:[
+                        {
+                           s_imgsrc:'korunka1',
+                            s_heading:'KALOUD LOTUS II®',
+                            bonus_heading:'Voľba pre pokročilých, aj príležitostných fajčiarov',
+                            s_text:'Nová verzia špičkového heat managementu, ktorá vďaka patentovanej konštrukcii robí Shishu chutnejšiu a výrazne menej škodlivejšiu',
+                            h_heading:'SHISHA TOWN BOWL by GUSTO',
+                            h_text:'Prémiová, hlboká, na mieru vyrobená pre nás a presne podľa našich požiadaviek, renomovanými výrobcami a našimi kamarátmi z Gusto Bowls.'
+                        },
+                         {
+                           s_imgsrc:'korunka1',
+                            s_heading:'STARBUZZ N.A.R.',
+                            bonus_heading:'Voľba pre extrémistov',
+                            s_text:'Revolučný heat management s oddelenými komorami. Žiadna pachuť ani popol z uhlíkov. Brutálna dymivosť. Vysoko účinná redukcia CO.',
+                            h_heading:'FUMARI ROOK by ALPACA',
+                            h_text:'Špičková, extrémne hlboká korunka, ručne vyrábaná v USA z vysokokvalitnej hliny a s bezolovnatou glazúrou od legendárnej firmy Alpaca Bowls Co.'
+                        }
+                    ]
+                 }
              ]
               }}})
 
@@ -600,7 +624,10 @@ Vue.component('pricing', {
         }
     },
     mounted(){
-        this.changeContent(window.location.href.split('cont=')[1][0])
+        try{
+            this.changeContent(window.location.href.split('cont=')[1][0])
+        }
+        catch{}
     }
 })
 

@@ -506,6 +506,15 @@ body {
       font-weight: bold;
       font-size: 19px;
       margin-bottom: 10px; }
+    .shisha-item .cont-sh .s-cont .bonus-heading {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 10px;
+      margin-left: -10px;
+      background: #412715;
+      border-radius: 12px;
+      margin-bottom: 20px; }
     .shisha-item .cont-sh .s-cont .text {
       font-size: 15px; }
     .shisha-item .cont-sh .s-cont .s-img-m {
