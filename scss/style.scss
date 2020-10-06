@@ -754,6 +754,9 @@ td~td{
             width: 47%;
             margin: 5px;
         }
+        @include small(){
+            width: 43%;
+        }
     .chooser-box {
         display: flex;
         transition: $short;

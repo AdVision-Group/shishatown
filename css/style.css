@@ -583,6 +583,9 @@ td ~ td {
       .chooser-cont .link {
         width: 47%;
         margin: 5px; } }
+    @media (max-width: 450px) {
+      .chooser-cont .link {
+        width: 43%; } }
     .chooser-cont .link .chooser-box {
       display: flex;
       transition: all 0.4s;
