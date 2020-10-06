@@ -196,7 +196,8 @@ body {
       filter: invert(100%);
       max-width: 90px;
       max-height: 90px;
-      object-fit: cover; }
+      object-fit: cover;
+      width: 50%; }
       @media (max-width: 900px) {
         .chooser-cont .chooser-box img {
           max-width: 70px;

@@ -125,6 +125,7 @@ body {
             max-width: 90px;
             max-height: 90px;
             object-fit: cover;
+            width: 50%;
 
             @include tablet() {
                 max-width: 70px;
