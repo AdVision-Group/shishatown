@@ -44,6 +44,10 @@ $dark-brown: #412715;
     box-sizing: border-box;
 }
 
+img{
+    object-fit: contain;
+}
+
 
 body {
     min-height: 200vh;
@@ -432,6 +436,9 @@ body {
 .bonus-item {
     display: flex;
     width: 47%;
+    img{
+        flex: 1
+    }
 
     @include small {
         width: 100%;
@@ -473,6 +480,7 @@ body {
     }
 
     .small {
+        flex: 1;
         .heading {
             font-size: 17px;
             position: relative;

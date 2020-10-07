@@ -8,6 +8,10 @@ body{
 	color:white;
 }
 
+img{
+    object-fit: contain;
+}
+
 $primary : #603813;
 $secondary: rgb(103, 73, 41);
 $tertiary: rgb(162, 142, 116);

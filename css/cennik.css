@@ -131,6 +131,9 @@ h1 {
   padding: 0;
   box-sizing: border-box; }
 
+img {
+  object-fit: contain; }
+
 body {
   min-height: 200vh;
   margin: 0;
@@ -420,6 +423,8 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   position: relative; }
+  .bonus-item img {
+    flex: 1; }
   @media (max-width: 450px) {
     .bonus-item {
       width: 100%; } }
@@ -447,24 +452,26 @@ body {
     border-radius: 14px;
     right: 10px;
     bottom: 10px; }
-  .bonus-item .small .heading {
-    font-size: 17px;
-    position: relative; }
-    @media (max-width: 1150px) {
-      .bonus-item .small .heading {
-        font-size: 14px; } }
-    @media (max-width: 900px) {
-      .bonus-item .small .heading {
-        font-size: 17px; } }
-    .bonus-item .small .heading .price {
-      position: absolute;
+  .bonus-item .small {
+    flex: 1; }
+    .bonus-item .small .heading {
       font-size: 17px;
-      background: #412715;
-      padding: 7px;
-      border-radius: 14px;
-      left: 0;
-      right: auto;
-      bottom: -40px; }
+      position: relative; }
+      @media (max-width: 1150px) {
+        .bonus-item .small .heading {
+          font-size: 14px; } }
+      @media (max-width: 900px) {
+        .bonus-item .small .heading {
+          font-size: 17px; } }
+      .bonus-item .small .heading .price {
+        position: absolute;
+        font-size: 17px;
+        background: #412715;
+        padding: 7px;
+        border-radius: 14px;
+        left: 0;
+        right: auto;
+        bottom: -40px; }
 
 .centered {
   display: flex;
