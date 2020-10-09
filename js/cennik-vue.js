@@ -194,10 +194,6 @@ Vue.component('shisha',{
                         id:3,
                        img_src: 'exclusive.png',
                         heading:'Shisha exclusive'
-                    },{
-                        id:4,
-                       img_src: 'hookah.svg',
-                        heading:'Korunky'
                     }
                 ],
             currentContent: -1,
@@ -206,6 +202,14 @@ Vue.component('shisha',{
                     heading:'shisha classic',
                     shishas:[
                         {
+                           s_imgsrc:'korunka1',
+                            s_heading:'KALOUD LOTUS II®',
+                            bonus_heading:'Voľba pre pokročilých, aj príležitostných fajčiarov',
+                            s_text:'Nová verzia špičkového heat managementu, ktorá vďaka patentovanej konštrukcii robí Shishu chutnejšiu a výrazne menej škodlivejšiu',
+                            h_heading:'SHISHA TOWN BOWL by GUSTO',
+                            h_text:'Prémiová, hlboká, na mieru vyrobená pre nás a presne podľa našich požiadaviek, renomovanými výrobcami a našimi kamarátmi z Gusto Bowls.'
+                        },
+                        {   
                             s_imgsrc:'classic1',
                             s_heading:'AVION STICK RS',
                             s_text:'Vynikajúco vyvážený ťah, vyrobená z nehrdzavejúcej ocele v kvalite AISI 321, teda s prídavkom Titanu, ktorá sa používa v medicínskom a zbrojárenskom priemysle. Skoro všetci ostatní výrobcovia nerezových fajok používajú nižšiu potravinársku triedu AISI 304 alebo 316. Gejzírový spätný ventil.',
@@ -219,6 +223,14 @@ Vue.component('shisha',{
                     heading:'shishabucks',
                     shishas:[
                         {
+                           s_imgsrc:'korunka1',
+                            s_heading:'KALOUD LOTUS II®',
+                            bonus_heading:'Voľba pre pokročilých, aj príležitostných fajčiarov',
+                            s_text:'Nová verzia špičkového heat managementu, ktorá vďaka patentovanej konštrukcii robí Shishu chutnejšiu a výrazne menej škodlivejšiu',
+                            h_heading:'SHISHA TOWN BOWL by GUSTO',
+                            h_text:'Prémiová, hlboká, na mieru vyrobená pre nás a presne podľa našich požiadaviek, renomovanými výrobcami a našimi kamarátmi z Gusto Bowls.'
+                        },
+                        {
                             s_imgsrc:'shishabucks1',
                             s_heading:'SHISHABUCKS CLOUD MICRO',
                             s_text:'Vynikajúca kanadská fajka z plexiskla a eloxovaného hliníka. Napriek tomu, že je z portfolia Shishabucks najmenšia, má podľa nás najlepší ťah. LED podsvietená.Odporúčame priobjednať si k nej do vázy farbivo alebo čerstvé ovocie. Podávame ju s účinným difúzorom, takže buble veľmi jemne.',
@@ -231,6 +243,22 @@ Vue.component('shisha',{
                  {
                     heading:'shisha exclusive',
                     shishas:[
+                        {
+                           s_imgsrc:'korunka1',
+                            s_heading:'KALOUD LOTUS II®',
+                            bonus_heading:'Voľba pre pokročilých, aj príležitostných fajčiarov',
+                            s_text:'Nová verzia špičkového heat managementu, ktorá vďaka patentovanej konštrukcii robí Shishu chutnejšiu a výrazne menej škodlivejšiu',
+                            h_heading:'SHISHA TOWN BOWL by GUSTO',
+                            h_text:'Prémiová, hlboká, na mieru vyrobená pre nás a presne podľa našich požiadaviek, renomovanými výrobcami a našimi kamarátmi z Gusto Bowls.'
+                        },
+                         {
+                           s_imgsrc:'korunka1',
+                            s_heading:'STARBUZZ N.A.R.',
+                            bonus_heading:'Voľba pre extrémistov',
+                            s_text:'Revolučný heat management s oddelenými komorami. Žiadna pachuť ani popol z uhlíkov. Brutálna dymivosť. Vysoko účinná redukcia CO.',
+                            h_heading:'FUMARI ROOK by ALPACA',
+                            h_text:'Špičková, extrémne hlboká korunka, ručne vyrábaná v USA z vysokokvalitnej hliny a s bezolovnatou glazúrou od legendárnej firmy Alpaca Bowls Co.'
+                        },
                         {
                             s_imgsrc:'ex1',
                             s_heading:'TAHTA s difúzorom',
