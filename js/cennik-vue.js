@@ -157,7 +157,7 @@ Vue.component('shisha',{
                         <bonus-item  imgsrc='ice.png' heading='Ľad do vázy' price='1,00'></bonus-item>
                         <bonus-item imgsrc='fruit.png' heading='Čerstvé ovocie do vázy' price='2,00'></bonus-item>
                         <bonus-item imgsrc='coloring.png' heading='Farbivo do vázy' price='1,50'></bonus-item>
-                        <bonus-item imgsrc='hose.png' heading='Jednorázová hadica' price='2,00'></bonus-item>
+                        <bonus-item imgsrc='hose.png' heading='Nová hadica' price='2,00'></bonus-item>
                     </div>
                 </div>
                 </div>

@@ -560,17 +560,12 @@ td ~ td {
 .socials img {
   width: 50px;
   display: block;
+  transition: .3s all;
   margin: 10px; }
 
-.fb_icon:hover {
-  content: url("../images/socials/fb_active.png"); }
-
-.ig_icon:hover {
-  content: url("../images/socials/ig_active.png"); }
-
-.ytb_icon:hover {
-  content: url("../images/socials/ytb_active.png"); }
-
+.socials img:hover{
+  filter: invert(1) grayscale(1);
+}
 .chooser-cont {
   z-index: 2;
   padding-top: 50px;
@@ -618,3 +613,10 @@ td ~ td {
     @media (min-width: 900px) {
       .chooser-cont .link:hover {
         transform: scale(1.1); } }
+
+        img.team_member_img.one {
+          filter: brightness(1.1);
+      }
+      img.team_member_img.two {
+        filter: saturate(0.8);
+    }
