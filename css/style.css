@@ -614,9 +614,3 @@ td ~ td {
       .chooser-cont .link:hover {
         transform: scale(1.1); } }
 
-        img.team_member_img.one {
-          filter: brightness(1.1);
-      }
-      img.team_member_img.two {
-        filter: saturate(0.8);
-    }

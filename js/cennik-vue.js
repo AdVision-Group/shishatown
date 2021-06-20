@@ -353,7 +353,7 @@ Vue.component('shisha',{
                             h_text:'Prémiová, hlboká, na mieru vyrobená pre nás a presne podľa našich požiadaviek, renomovanými výrobcami a našimi kamarátmi z Gusto Bowls.'
                         },
                          {
-                           s_imgsrc:'korunka1',
+                           s_imgsrc:'korunka2',
                             s_heading:'STARBUZZ N.A.R.',
                             bonus_heading:'Voľba pre extrémistov',
                             s_text:'Revolučný heat management s oddelenými komorami. Žiadna pachuť ani popol z uhlíkov. Brutálna dymivosť. Vysoko účinná redukcia CO.',
